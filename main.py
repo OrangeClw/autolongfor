@@ -178,6 +178,11 @@ async def fetch(url: str, headers: Dict, method: str = 'POST', data: Optional[Di
     """通用 HTTP 请求"""
     try:
         headers = {k.lower(): v for k, v in headers.items()}  # 统一小写键名
+        # 添加编码处理
+        for key, value in headers.items():
+            if isinstance(value, str):
+                headers[key] = value.encode('utf-8').decode('latin1')
+                
         if method.upper() == 'POST':
             response = requests.post(url, headers=headers, json=data, timeout=timeout)
         else:
@@ -187,7 +192,7 @@ async def fetch(url: str, headers: Dict, method: str = 'POST', data: Optional[Di
         res = response.json()
         debug(res, url.split('/')[-1])
         
-        if 'message' in res and '登录已过期' in res['message'] or '用户未登录' in res['message']:
+        if 'message' in res and ('登录已过期' in res['message'] or '用户未登录' in res['message']):
             raise Exception("用户需要去登录")
         
         return res

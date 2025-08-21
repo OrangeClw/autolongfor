@@ -1,22 +1,22 @@
 {
   "accounts": [
     {
-      "account_id": "手机号",
-      "userName": "账号名称",
-      "x-lf-dxrisk-token": "安全令牌",
+      "account_id": "15633161285",
+      "userName": "15633161285",
+      "x-lf-dxrisk-token": "7e4013272fd243ac9964f0384b3489b1",
       "x-lf-channel": "C2",
-      "token": "用户令牌",
-      "x-lf-usertoken": "用户令牌",
-      "cookie": "会话Cookie",
+      "token": "7e4013272fd243ac9964f0384b3489b1",
+      "x-lf-usertoken": "7e4013272fd243ac9964f0384b3489b1",
+      "cookie": "acw_tc=276aedee17557688374492537e3d15c151fac01172e26acf9caf108d4f514f",
       "x-lf-bu-code": "C20400",
       "x-lf-dxrisk-source": "5"
     }
   ],
   "assist_groups": [
     {
-      "group_name": "组名",
-      "master": "主账号ID",
-      "followers": ["从账号ID1", "从账号ID2"]
+      "group_name": "我的助力组",
+      "master": "13800138000",
+      "followers": ["13900139000", "13700137000"]
     }
   ]
 }
